@@ -1,4 +1,5 @@
 // Write your code here...
+import Product from "./Product";
 const products = document.querySelector('.products');
 const nameInp = document.querySelector('input[name=name]');
 const costInp = document.querySelector('input[name=cost]');
@@ -22,5 +23,9 @@ const clearForm = () => {
 };
 
 addBtn.addEventListener('click', function () {
+
+  const getFormContent = getFormContents();
+  const addProduct = new Product(...getFormContent);
+  console.log(addProduct);
   clearForm();
 });
